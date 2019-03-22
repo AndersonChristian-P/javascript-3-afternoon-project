@@ -50,7 +50,15 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater() {
+  for (let i = 0; i < employees.length; i++) {
+    if (employees[i]['firstName'] === 'Theo') {
+      delete employees[i]
+    } else if (employees[i]['firstName'] === 'Lorie')
+      employees[i]['department'] = 'HR'
+  }
+  return employees
+}
 
 
 
@@ -68,7 +76,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates() {
+  for (let i = 0; i < workplaceAccidents.length; i++) {
+    for (let j = i + 1; j < workplaceAccidents.length; j++) {
+      if (workplaceAccidents[i] === workplaceAccidents[j]) {
+        workplaceAccidents.splice(j, 1)
+      }
+    }
+  }
+  return workplaceAccidents
+}
 
 
 
@@ -81,7 +98,7 @@ var cat = {
     {
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
-    }, 
+    },
     {
       name: 'Lazy Bones',
       activities: ['sleep', 'pre-sleep naps']
@@ -97,14 +114,14 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
 ////////// PROBLEM 4 //////////
 
-// Do not edit the code below.
+// Do not edit the code below. myCar.accidents[1].atFaultForAccident
 var myCar = {
   make: 'Toyota',
   model: 'Corolla',
@@ -138,25 +155,44 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+console.log(myCar.accidents[1].atFaultForAccident)
+
+function recordCleaner() {
+  for (let i = 0; i < myCar.accidents.length; i++) {
+    myCar.accidents[i].atFaultForAccident = false;
+  }
+  console.log(myCar)
+}
 
 
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 // Do not edit the code above.
 
 /*
   Above is an array of arrays. Use two for loops.
-    1. Write a function called 'looper'. 
+    1. Write a function called 'looper'.
     2. 'looper' should loop over the arrays.
     3.  If the number is odd, replace it with 'odd'.
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper() {
 
+  for (let i = 0; i < numsArr.length; i++) {
+    let subArr = numsArr[i];
+    for (let j = 0; j < subArr.length; j++) {
+      if (numsArr[i][j] % 2 === 0) {
+        numsArr[i][j] = 'even'
+      } else {
+        numsArr[i][j] = 'odd'
+      }
+    }
+  }
+  return numsArr
+}
 
